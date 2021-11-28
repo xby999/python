@@ -62,12 +62,20 @@ class Ui_Form(object):
         self.pushButton = QtWidgets.QPushButton(Form)
         self.pushButton.setGeometry(QtCore.QRect(620, 450, 121, 41))
         self.pushButton.setObjectName("pushButton")
-        self.pushButton.clicked.connect(lambda :self.Run_btn_clicked(Btn_func.text))
+        self.pushButton.clicked.connect(lambda: self.Run_btn_clicked(Btn_func.text))
 
         self.pushButton_2 = QtWidgets.QPushButton(Form)
         self.pushButton_2.setGeometry(QtCore.QRect(510, 450, 81, 41))
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_2.clicked.connect(lambda: self.Clear_btn_clicked())
+
+        self.comboBox = QtWidgets.QComboBox(Form)
+        self.comboBox.setGeometry(QtCore.QRect(40, 50, 121, 21))
+        self.comboBox.setObjectName("comboBox")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -79,6 +87,10 @@ class Ui_Form(object):
         self.label.setText(_translate("Form", "Msg Status:"))
         self.pushButton.setText(_translate("Form", "Run"))
         self.pushButton_2.setText(_translate("Form", "Clean"))
+        self.comboBox.setItemText(0, _translate("Form", "Clock Vote"))
+        self.comboBox.setItemText(1, _translate("Form", "1"))
+        self.comboBox.setItemText(2, _translate("Form", "2"))
+        self.comboBox.setItemText(3, _translate("Form", "3"))
 
     def Run_btn_clicked(self,text):
         result = os.popen(text)
