@@ -2,7 +2,7 @@ import sys
 
 vendor = "blue"
 venom = "Beginning"
-# f_name = "blut.txt"
+f_name = "blut.txt"
 #count = 0
 def countInFile(filename):
     aa = 0
@@ -17,10 +17,11 @@ def countInFile(filename):
             if str.find(venom) != -1:
                 aa-=1
                 print(aa)  
-        
+        print(contents[-1])
+        str1 = contents[-1]
+        print(str1.split("tuple")[1])
         return 10
 
 if __name__ == "__main__":
-    print(sys.argv[1])
-    print(countInFile(sys.argv[1]))
-    
+    #print(sys.argv[1])
+    print(countInFile(f_name))
